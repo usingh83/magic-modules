@@ -460,6 +460,23 @@ overrides: !ruby/object:Overrides::ResourceOverrides
         ignore_read_extra:
           - "deletion_protection"
           - "root_password"
+    ### Password Validation Policy ###
+      - !ruby/object:Provider::Terraform::Examples
+        name: "sql_mysql_instance_password_validation_policy"
+        primary_resource_id: "default"
+        primary_resource_type: "google_sql_database_instance"
+        vars:
+          mysql_instance_ha: "mysql-instance-pv"
+          username: "username"
+          deletion_protection: "true"
+      - !ruby/object:Provider::Terraform::Examples
+        name: "sql_postgres_instance_password_validation_policy"
+        primary_resource_id: "default"
+        primary_resource_type: "google_sql_database_instance"
+        vars:
+          mysql_instance_ha: "postgres-instance-pv"
+          username: "username"
+          deletion_protection: "true"
     ### HA ###
       - !ruby/object:Provider::Terraform::Examples
         name: "sql_instance_ha"
